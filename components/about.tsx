@@ -6,7 +6,7 @@ export const About = () => {
     <>
       {" "}
       <div
-        className="rounded-lg shadow-xl bg-gray-900 text-white h-full w-full"
+        className="rounded-lg shadow-xl bg-white text-black dark:bg-gray-900 dark:text-white h-full w-full"
         
       >
         <div className="border-b border-gray-800 px-8 py-3">

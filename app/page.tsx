@@ -4,10 +4,8 @@ import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
 import { MarqueeComponent } from "@/components/marquee";
 import { About } from "@/components/about";
-import { Switch } from "@nextui-org/switch";
-import { MoonIcon } from "./MoonIcon";
-import { SunIcon } from "./SunIcon";
 import { Stories } from "@/components/stories";
+import { ThemeSwitch } from "@/components/theme-switch";
 
 export default function Home() {
   return (
@@ -22,13 +20,7 @@ export default function Home() {
               src="/Photo.jpg"
             />
             <CardFooter className="p-0 backdrop-filter backdrop-blur-lg bg-opacity-30 justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-2 absolute before:rounded-3xl rounded-3xl bottom-1 w-11/12 place-self-center shadow-small  z-10">
-              <Switch
-                defaultSelected
-                size="lg"
-                color="success"
-                startContent={<SunIcon />}
-                endContent={<MoonIcon />}
-              />
+              <ThemeSwitch />
             </CardFooter>
           </Card>
         </div>

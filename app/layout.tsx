@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: light)", color: "#f3eff5" },
     { media: "(prefers-color-scheme: dark)", color: "#252527" },
   ],
   icons: {
@@ -32,7 +32,7 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "h-max bg-neutral-800 font-sans antialiased",
+          "h-max bg-slate-200 dark:bg-neutral-800 font-sans antialiased",
           fontSans.variable
         )}
       >
