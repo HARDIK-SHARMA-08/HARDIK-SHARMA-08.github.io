@@ -6,8 +6,7 @@ export const About = () => {
     <>
       {" "}
       <div
-        className="rounded-lg shadow-xl bg-white text-black dark:bg-gray-900 dark:text-white h-full w-full"
-        
+        className="rounded-lg shadow-xl bg-white text-sm sm:text-lg text-black dark:bg-gray-900 dark:text-white h-fit w-full sm:h-full"
       >
         <div className="border-b border-gray-800 px-8 py-3">
           <div className="inline-block w-3 h-3 mr-2 rounded-full bg-red-500" />

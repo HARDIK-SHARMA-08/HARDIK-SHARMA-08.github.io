@@ -1,18 +1,22 @@
 "use client";
 import { Card, CardHeader, CardFooter } from "@nextui-org/card";
-import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
-import { MarqueeComponent } from "@/components/marquee";
-import { About } from "@/components/about";
-import { Stories } from "@/components/stories";
-import { ThemeSwitch } from "@/components/theme-switch";
+import {
+  MarqueeComponent,
+  ThemeSwitch,
+  About,
+  Stories,
+  ProjectCard,
+  Leetcode,
+  Footer,
+} from "@/components";
 
 export default function Home() {
   return (
-    <div className="max-w-screen p-8 sm:p-14">
+    <div className="max-w-screen p-8 pb-0 sm:p-14 sm:pb-0">
       <div className="grid grid-cols-12 grid-rows-1 gap-5 sm:gap-10 sm:grid-rows-2">
-        <div className="col-span-12 sm:col-span-3">
-          <Card className="rounded-3xl h-[300px]">
+        <div className="col-span-12 md:col-span-6 lg:col-span-3">
+          <Card className="rounded-3xl h-fit lg:h-full">
             <Image
               removeWrapper
               alt="Card background"
@@ -25,22 +29,39 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="col-span-12 sm:col-span-5">
-          <Card className="rounded-3xl h-[300px]">
+        <div className="col-span-12  md:col-span-6 lg:col-span-5">
+          <Card className="rounded-3xl h-fit lg:h-full">
             <About />
           </Card>
         </div>
 
-        <div className="col-span-12 row-span-1 sm:col-span-4 sm:row-span-2">
-          <Card className="rounded-3xl h-full sm:h-full">
+        <div className="hidden lg:block lg:col-span-4 lg:row-span-2">
+          <Card className="rounded-3xl h-full items-center sm:h-full">
             <Stories />
           </Card>
         </div>
 
-        <div className="col-span-12 sm:col-span-8 sm:col-start-1">
-          <Card className="rounded-3xl h-[175px] sm:h-full">
-            <CardHeader className="flex-col items-center absolute sm:absolute items-start ml-2 pt-0">
-              <p className="backdrop-filter backdrop-blur-lg bg-opacity-50 text-tiny text-black bg-white rounded-b-xl bottom-1 w-fit shadow-small p-2 px-4 uppercase font-bold">
+        <div className="block col-span-12 lg:hidden lg:col-span-4 lg:row-span-2">
+          <Card className="rounded-3xl h-fit items-center">
+          Hello
+          </Card>
+        </div>
+
+        <div className="col-span-12 sm:col-span-8 sm:col-start-1 h-full">
+          <Card className="rounded-3xl h-full justify-center" isFooterBlurred>
+            <CardHeader className="flex-col items-center top-0 absolute sm:absolute items-start ml-2 pt-0">
+              <p className="text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-2 px-6 uppercase font-bold">
+                Projects
+              </p>
+            </CardHeader>
+            <ProjectCard />
+          </Card>
+        </div>
+
+        <div className="col-span-12 sm:col-span-6 md:col-span-7 lg:col-span-8 lg:col-start-1">
+          <Card className="rounded-3xl pt-12 pb-6 h-fit sm:h-full">
+            <CardHeader className="flex-col items-center top-0 absolute sm:absolute items-start ml-2 pt-0">
+              <p className="relative text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-2 px-6 uppercase font-bold">
                 💻 Languages & Technologies
               </p>
             </CardHeader>
@@ -48,69 +69,20 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="col-span-12 sm:col-span-5">
-          <Card className="rounded-3xl h-[300px]" isFooterBlurred>
-            <CardHeader className="rounded-3xl flex-col items-start">
-              <p className="text-tiny text-white/60 uppercase font-bold">New</p>
-              <h4 className="text-black font-medium text-2xl">Acme camera</h4>
+        <div className="col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-4 lg:col-start-9 ">
+          <Card className="rounded-3xl h-full justify-center p-8">
+            <CardHeader className="flex-col items-center top-0 absolute sm:absolute pt-0">
+              <p className="relative left-10 text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-2 px-6 uppercase font-bold">
+                LeetCode
+              </p>
             </CardHeader>
-            <Image
-              removeWrapper
-              alt="Card example background"
-              className="w-full h-full object-cover"
-              src="/images/card-example-6.jpeg"
-            />
-            <CardFooter className="bg-white/30 border-t-1 border-zinc-100/50 justify-between">
-              <div>
-                <p className="text-black text-tiny">Available soon.</p>
-                <p className="text-black text-tiny">Get notified.</p>
-              </div>
-              <Button
-                className="text-tiny"
-                color="primary"
-                radius="full"
-                size="sm"
-              >
-                Notify Me
-              </Button>
-            </CardFooter>
+            <Leetcode />
           </Card>
         </div>
 
-        <div className="col-span-12 sm:col-span-7">
-          <Card className="rounded-3xl h-[300px]" isFooterBlurred>
-            <CardHeader className="flex-col items-start">
-              <p className="text-tiny text-white/60 uppercase font-bold">
-                Your day your way
-              </p>
-              <h4 className="text-white/90 font-medium text-xl">
-                Your checklist for better sleep
-              </h4>
-            </CardHeader>
-            <Image
-              removeWrapper
-              alt="Relaxing app background"
-              className="w-full h-full object-cover"
-              src="/images/card-example-5.jpeg"
-            />
-            <CardFooter className="bg-black/40 border-t-1 border-default-600 dark:border-default-100">
-              <div className="flex gap-2 items-center">
-                <Image
-                  alt="Breathing app icon"
-                  className="rounded-full w-10 h-11 bg-black"
-                  src="/images/breathing-app-icon.jpeg"
-                />
-                <div className="flex flex-col">
-                  <p className="text-tiny text-white/60">Breathing App</p>
-                  <p className="text-tiny text-white/60">
-                    Get a good nights sleep.
-                  </p>
-                </div>
-              </div>
-              <Button radius="full" size="sm">
-                Get App
-              </Button>
-            </CardFooter>
+        <div className="col-span-12">
+          <Card className="rounded-t-3xl rounded-b-none h-full p-10">
+            <Footer />
           </Card>
         </div>
       </div>

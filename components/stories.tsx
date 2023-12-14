@@ -66,8 +66,6 @@ export const Stories = () => {
     },
   ];
 
- 
-  
 
   const contentStyle = {
     background: "#333",
@@ -76,8 +74,6 @@ export const Stories = () => {
     color: "white",
     height: "100%",
   };
-
-  
 
   return (
     <div>
