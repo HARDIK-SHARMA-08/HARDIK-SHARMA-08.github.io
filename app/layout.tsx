@@ -29,7 +29,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
+        
+      </head>
       <body
         className={clsx(
           "h-max bg-slate-200 dark:bg-neutral-800 font-sans antialiased",
@@ -43,6 +55,7 @@ export default function RootLayout({
             </main>
           </div>
         </Providers>
+        
       </body>
     </html>
   );
