@@ -16,7 +16,7 @@ export const Leetcode = () => {
       <div className="flex flex-row justify-between items-center">
         <div className="h-24 w-24 rounded-full border-black-800 dark:border-white-600 border-4 pt-2 text-center">
           <p className="text-gray-600 text-xs">All</p>
-          <h1 className="text-2xl">{data?.totalSolved}</h1>
+          <h1 className="text-2xl divide-y">{data?.totalSolved}</h1>
           <p className="text-gray-600 text-xs">{data?.totalQuestions}</p>
         </div>
         <div className="flex flex-row gap-8">

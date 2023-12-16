@@ -1,9 +1,24 @@
-[
-  {
+{
+  "Project1": {
     "key": "1",
     "name": "MERN Ecommerce Application",
     "link": "https://uncommon.cyclic.app/",
     "github": "https://github.com/HARDIK-SHARMA-08/MERN-Ecommerce-App",
+    "about": "Effortless e-commerce with secure authentication, Braintree PayPal Payment integration, and admin-exclusive CRUD for categories and products.",
+    "techStack": [
+      "MongoDB",
+      "Node.js",
+      "Express",
+      "React.js",
+      "Tailwind CSS",
+      "Restful API"
+    ]
+  },
+  "Project2": {
+    "key": "2",
+    "name": "MERN Application",
+    "link": "#",
+    "github": "#",
     "about": "Effortless e-commerce with secure authentication, Braintree PayPal Payment integration, and admin-exclusive CRUD for categories and products.",
     "techStack": [
       "MongoDB",
@@ -13,4 +28,4 @@
       "Restful API"
     ]
   }
-]
+}

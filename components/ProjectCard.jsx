@@ -1,23 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Chip } from "@nextui-org/chip";
-import { Link } from "@nextui-org/link";
 import { GithubIcon } from "./icons";
 
-export const ProjectCard = ({
-  MainName,
-  LiveLink,
-  GithubRepo,
-  Description,
-  Technology = [],
-}) => {
-  console.log(LiveLink);
+export const ProjectCard = (props) => {
   return (
     <>
       <div className="flex flex-col h-full w-full items-center">
         <div className="h-28 w-full rounded-3xl bg-white flex justify-center items-center">
-          <div className="absolute h-fit w-fit bg-green-400 top-0 left-0 p-3 lg:p-4 rounded-tl-3xl rounded-br-3xl">
+          <div className="absolute w-fit bg-green-400 top-0 left-0 p-2 px-3 lg:p-4 rounded-tl-3xl rounded-br-3xl">
             <a
-              href={LiveLink}
+              href={props.data.link}
               className="duration-200 flex flex-row gap-2 items-center"
               target="_blank"
               rel="noopener noreferrer"
@@ -41,16 +33,18 @@ export const ProjectCard = ({
         </div>
         <div>
           <h2 className="uppercase font-bold text-center my-4 flex flex-row flex-wrap items-center justify-center gap-4">
-            {MainName}{" "}
-            <Link href={GithubRepo} target="_blank" rel="noopener noreferrer">
+            {props.data.name}{" "}
+            <a
+              href={props.data.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <GithubIcon> Repo </GithubIcon>
-            </Link>
+            </a>
           </h2>
-          <p className="text-center lg:text-left">
-            {Description}
-          </p>
+          <p className="text-justify lg:text-left">{props.data.about}</p>
           <div className="flex flex-wrap gap-2 mt-4">
-            {Technology.map((Tech, index) => (
+            {props.data.techStack.map((Tech, index) => (
               <Chip key={index}>{Tech}</Chip>
             ))}
           </div>
