@@ -6,13 +6,13 @@ export const About = () => {
   return (
     <>
       {" "}
-      <div className="rounded-lg shadow-xl bg-white text-sm sm:text-lg text-black dark:bg-gray-900 dark:text-white h-fit w-full sm:h-full">
+      <div className="rounded-lg shadow-xl bg-white text-sm lg:text-lg text-black dark:bg-gray-900 dark:text-white h-fit w-full sm:h-full">
         <div className="border-b border-gray-800 px-8 py-3">
           <div className="inline-block w-3 h-3 mr-2 rounded-full bg-red-500" />
           <div className="inline-block w-3 h-3 mr-2 rounded-full bg-yellow-700 dark:text-yellow-300" />
           <div className="inline-block w-3 h-3 mr-2 rounded-full bg-green-400" />
         </div>
-        <div className="px-8 py-6">
+        <div className="p-8">
           <p>
             <em className="text-blue-800 dark:text-blue-400">const</em>{" "}
             <span className="text-green-800 dark:text-green-400">aboutMe</span>{" "}

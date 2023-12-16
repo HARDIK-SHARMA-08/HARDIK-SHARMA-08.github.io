@@ -1,4 +1,6 @@
 "use client";
+import React from "react";
+import { useEffect, useState, useRef } from "react";
 import { Card, CardHeader, CardFooter } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import {
@@ -10,11 +12,11 @@ import {
   Footer,
   ProjectCard,
   Education,
+  Experience,
 } from "@/components";
-import React from "react";
 import Slider from "react-slick";
-import { useEffect, useState } from "react";
 import data from "@/app/ProjectData.json";
+import { LeftArrow, RightArrow } from "@/components/icons";
 
 interface ProjectData {
   Project1: Object;
@@ -22,6 +24,15 @@ interface ProjectData {
 }
 
 export default function Home() {
+  const sliderRef = useRef<Slider>(null);
+  const next = () => {
+    sliderRef.current?.slickNext();
+  };
+
+  const previous = () => {
+    sliderRef.current?.slickPrev();
+  };
+
   var settings = {
     dots: false,
     speed: 500,
@@ -61,20 +72,20 @@ export default function Home() {
         </div>
 
         <div className="col-span-12 md:col-span-6 lg:col-span-5">
-          <Card className="rounded-3xl h-fit lg:h-full">
+          <Card className="rounded-3xl h-full lg:h-full">
             <About />
           </Card>
         </div>
 
         <div className="hidden lg:block lg:col-span-4 lg:row-span-1">
-          <Card className="rounded-3xl h-[400px] items-center">
+          <Card className="rounded-3xl h-[435px] items-center">
             <Stories />
           </Card>
         </div>
 
-        <div className="block col-span-12 md:col-span-12 lg:hidden lg:col-span-4 ">
-          <Card className="rounded-3xl h-fit items-center pt-4">
-          <CardHeader className="flex-col items-center top-0 absolute left-0 items-start ml-2 pt-0">
+        <div className="inline-block col-span-12 md:col-span-12 lg:hidden ">
+          <Card className="rounded-3xl h-full items-center justify-center pt-4">
+            <CardHeader className="flex-col items-center top-0 absolute left-0 items-start ml-2 pt-0">
               <p className="text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold">
                 Education
               </p>
@@ -84,25 +95,25 @@ export default function Home() {
         </div>
 
         <div className="col-span-12 lg:col-span-7">
-          <Card className="rounded-3xl h-full p-8 lg:p-12 justify-center h-[500px] lg:h-full">
-            <CardHeader className="flex-col items-center top-0 absolute left-0 items-start ml-2 pt-0">
-              <p className="text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold">
-                Projects
-              </p>
-            </CardHeader>
-            <Slider {...settings} className="px-1 sm:px-4">
+          <Card className="rounded-3xl h-full justify-center">
+            <Slider ref={sliderRef} {...settings}>
               <ProjectCard data={projectDetails.Project1} />
             </Slider>
+            <div className="flex flex-row items-center justify-center gap-3">
+              <button className="button" onClick={previous}>
+                <LeftArrow />
+              </button>
+              <button className="button" onClick={next}>
+                <RightArrow />
+              </button>
+            </div>
+            <br />
           </Card>
         </div>
 
         <div className="col-span-12 lg:col-span-5">
-          <Card className="rounded-3xl h-full p-8 lg:p-12 justify-center h-[500px] lg:h-full">
-            <CardHeader className="flex-col items-center top-0 absolute left-0 items-start ml-2 pt-0">
-              <p className="text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold">
-                Experiences
-              </p>
-            </CardHeader>
+          <Card className="rounded-3xl h-full p-6 justify-between">
+            <Experience />
           </Card>
         </div>
 
@@ -118,7 +129,7 @@ export default function Home() {
         </div>
 
         <div className="col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-4 lg:col-start-9 ">
-          <Card className="rounded-3xl h-full justify-center px-8 pb-6 pt-10">
+          <Card className="rounded-3xl h-full justify-center px-8 pb-4 pt-10">
             <CardHeader className="flex-col items-center top-0 absolute sm:absolute">
               <p className="relative left-10 text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-lg w-fit shadow-small p-1 px-6 uppercase font-bold">
                 LeetCode
@@ -128,7 +139,7 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="col-span-12">
+        <div className="col-span-12 ">
           <Card className="rounded-t-3xl rounded-b-none h-full p-10">
             <Footer />
           </Card>

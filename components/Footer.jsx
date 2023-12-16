@@ -12,7 +12,7 @@ export const Footer = () => {
     <div className="flex flex-col ">
       <div className="flex flex-row justify-between">
         <a className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">
-          About
+          
         </a>
         <a className="hidden md:block cursor-pointer text-gray-600 hover:text-white uppercase">
           Services

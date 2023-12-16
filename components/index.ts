@@ -6,6 +6,7 @@ import { Stories } from "./Stories";
 import { Leetcode } from "./Leetcode";
 import { Footer } from "./Footer";
 import { Education } from "./Education";
+import { Experience } from "./Experience";
 
 export {
   About,
@@ -16,4 +17,5 @@ export {
   Leetcode,
   Footer,
   Education,
+  Experience,
 };
