@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import College from "../public/College.png";
-import School from "../public/School.png";
+import School from "../public/school.png";
 
 export const Education = () => {
   return (
