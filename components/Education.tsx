@@ -11,8 +11,8 @@ export const Education = () => {
         <div>
           <h4 className="font-bold md:text-2xl">Bachelor of Technology</h4>
           <div className="flex flex-row justify-between">
-            <h1 className="text-xs text-gray-500 ">2020-24</h1>
-            <h1 className="text-xs text-gray-500 ">
+            <h1 className="text-xs text-gray-500">2020-24</h1>
+            <h1 className="text-xs text-gray-500">
               <a href="https://www.skit.ac.in/">SKIT, Jaipur</a>
             </h1>
           </div>
@@ -23,8 +23,8 @@ export const Education = () => {
         <div>
           <h4 className="font-bold md:text-2xl">Senior Secondory School</h4>
           <div className="flex flex-row justify-between">
-            <h1 className="text-xs text-gray-500 ">Passing Year- 2020</h1>
-            <h1 className="text-xs text-gray-500 ">
+            <h1 className="text-xs text-gray-500">Passing Year- 2020</h1>
+            <h1 className="text-xs text-gray-500">
               <a href="https://bikanerboysschool.ac.in/">BBS, Bikaner</a>
             </h1>
           </div>

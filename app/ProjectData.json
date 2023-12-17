@@ -18,7 +18,7 @@
   "Project2": {
     "key": "2",
     "name": "MERN Application",
-    "link": "#",
+    "link": "https://stackoverflow.com/questions/74421327/nextrouter-was-not-mounted-next-js",
     "github": "#",
     "about": "Effortless e-commerce with secure authentication, Braintree PayPal Payment integration, and admin-exclusive CRUD for categories and products.",
     "techStack": [

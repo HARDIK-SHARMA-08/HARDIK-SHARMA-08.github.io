@@ -56,7 +56,7 @@ export default function Home() {
 
   return (
     <div className="max-w-screen p-8 pb-0 sm:p-14 sm:pb-0">
-      <div className="grid grid-cols-12 grid-rows-1 gap-5 sm:gap-10 sm:grid-rows-2">
+      <div className="grid grid-cols-12 gap-5 sm:gap-10">
         <div className="col-span-12 md:col-span-6 lg:col-span-3">
           <Card className="rounded-3xl h-[300px] md:h-[350px] lg:h-full">
             <Image
@@ -77,8 +77,8 @@ export default function Home() {
           </Card>
         </div>
 
-        <div className="hidden lg:block lg:col-span-4 lg:row-span-1">
-          <Card className="rounded-3xl h-[435px] items-center">
+        <div className="hidden lg:block lg:col-span-4">
+          <Card className="rounded-3xl h-[375px] items-center">
             <Stories />
           </Card>
         </div>
@@ -131,7 +131,7 @@ export default function Home() {
         <div className="col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-4 lg:col-start-9 ">
           <Card className="rounded-3xl h-full justify-center px-8 pb-4 pt-10">
             <CardHeader className="flex-col items-center top-0 absolute sm:absolute">
-              <p className="relative left-10 text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-lg w-fit shadow-small p-1 px-6 uppercase font-bold">
+              <p className="relative left-10 text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-yellow-300 dark:bg-opacity-50 rounded-lg w-fit shadow-small p-1 px-6 uppercase font-bold">
                 LeetCode
               </p>
             </CardHeader>
