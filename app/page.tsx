@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardHeader, CardFooter } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import {
@@ -14,13 +14,11 @@ import {
   Experience,
   ContactModal,
 } from "@/components";
-import Slider from "react-slick";
 import data from "@/app/ProjectData.json";
 import {
   LeftArrowIcon,
   RightArrowIcon,
   SkillIcon,
-  LinkIcon,
   LinkIcon2,
   ResumeIcon,
   MailIcon,
@@ -38,11 +36,11 @@ export default function Home() {
   //Modal
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  //Project
   const [projectDetails, setProjectDetails] = useState<ProjectData | null>(
     null
   );
+
+  //Project
   useEffect(() => {
     setProjectDetails(data);
   }, []);
