@@ -8,15 +8,15 @@ import {
 } from "./icons";
 
 export const Footer = () => {
+  //Function to get current year
   function getCurrentYear() {
     const currentDate = new Date();
     return currentDate.getFullYear();
   }
-
   const currentYear = getCurrentYear();
 
   return (
-    <div className="flex flex-row justify-between">
+    <div className="flex flex-col md:flex-row justify-between">
       <div className="flex flex-row space-x-8 items-center justify-between">
         <a href="https://www.linkedin.com/in/hardik-sharma8/">
           <LinkedInIcon />
