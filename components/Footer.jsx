@@ -16,7 +16,7 @@ export const Footer = () => {
   const currentYear = getCurrentYear();
 
   return (
-    <div className="flex flex-col md:flex-row justify-between">
+    <div className="flex flex-col md:flex-row gap-4 justify-between">
       <div className="flex flex-row space-x-8 items-center justify-between">
         <a href="https://www.linkedin.com/in/hardik-sharma8/">
           <LinkedInIcon />
@@ -34,6 +34,7 @@ export const Footer = () => {
           <BehanceIcon />
         </a>
       </div>
+      <hr className="block opacity-50 md:hidden"/>
       <div>
         <p className="w-full text-center text-gray-600">
           Copyright © {currentYear}

@@ -30,7 +30,7 @@ export const ProjectCard = (props) => {
           </div>
         </div>
         <div className="p-6 pb-6">
-          <h2 className="uppercase font-bold text-center flex flex-row flex-wrap items-center justify-center gap-4 pb-4">
+          <h2 className="uppercase font-bold text-center flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 pb-4">
             {props.data.name}{" "}
             <a
               href={props.data.github}

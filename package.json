@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@formspree/react": "^2.5.1",
     "@nextui-org/button": "2.0.18",
     "@nextui-org/card": "^2.0.21",
@@ -39,6 +40,7 @@
     "next-themes": "^0.2.1",
     "postcss": "8.4.29",
     "react": "18.2.0",
+    "react-awesome-reveal": "^4.2.7",
     "react-dom": "18.2.0",
     "react-fast-marquee": "^1.6.2",
     "react-insta-stories": "^2.6.2",

@@ -152,14 +152,22 @@ export default function Home() {
 
         {/* Project Card */}
         <div className="col-span-12 lg:col-span-7">
-          <Card className="rounded-3xl w-full justify-center">
-            {renderCurrentProjectCard()}
+          <Card className="rounded-3xl w-full justify-center ">
+            <div className={`transition-opacity duration-500`}>
+              {renderCurrentProjectCard()}
+            </div>
 
             <div className="flex flex-row items-center justify-center gap-3">
-              <button className="button" onClick={goToPrevSlide}>
+              <button
+                className="button hover:scale-125 duration-200"
+                onClick={goToPrevSlide}
+              >
                 <LeftArrowIcon />
               </button>
-              <button className="button" onClick={goToNextSlide}>
+              <button
+                className="button hover:scale-125 duration-200"
+                onClick={goToNextSlide}
+              >
                 <RightArrowIcon />
               </button>
             </div>
