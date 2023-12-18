@@ -75,7 +75,7 @@ export const MarqueeComponent = () => {
           className="h-16 lg:h-20 object-scale-down"
           src="https://cdn.simpleicons.org/express/fff"
         />
-        <div className="text-center text-md pt-2 text-gray-500">Express</div>
+        <div className="text-center text-md pt-2 text-gray-500">ExpressJS</div>
       </div>
       <div className="h-full w-full px-4 block dark:hidden">
         <Image
@@ -84,7 +84,7 @@ export const MarqueeComponent = () => {
           className="h-16 lg:h-20 object-scale-down"
           src="https://cdn.simpleicons.org/express/"
         />
-        <div className="text-center text-md pt-2 text-gray-500">Express</div>
+        <div className="text-center text-md pt-2 text-gray-500">ExpressJS</div>
       </div>
       <div className="h-full w-full px-4 ">
         <Image

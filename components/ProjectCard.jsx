@@ -3,15 +3,16 @@ import { Chip } from "@nextui-org/chip";
 import { GithubIcon, LinkIcon } from "./icons";
 
 export const ProjectCard = (props) => {
+
   return (
     <>
-      <div className="flex flex-col h-full justify-between">
+      <div className="flex flex-col w-full justify-between">
         <div
           className={`h-28 lg:h-52 w-full rounded-t-3xl bg-cover bg-top flex justify-center items-center relative`}
           style={{ backgroundImage: `url(${props.data.img})` }}
         >
           <div className="w-full h-full flex flex-col justify-center items-center backdrop-blur">
-            <div className="absolute w-fit bg-blue-600 top-0 left-0 p-2 px-3 lg:p-4 rounded-tl-3xl rounded-br-3xl">
+            <div className="absolute w-fit bg-[#0070f0] top-0 left-0 p-2 px-3 lg:p-4 rounded-tl-3xl rounded-br-3xl">
               <a
                 href={props.data.link}
                 className="duration-200 flex flex-row gap-2 items-center"
@@ -24,8 +25,7 @@ export const ProjectCard = (props) => {
             </div>
 
             <h4 className="font-bold text-3xl lg:text-5xl text-black">
-              uncommon
-              <span className="text-red-500 text-4xl lg:text-6xl">.</span>{" "}
+              {props.data.project}
             </h4>
           </div>
         </div>
@@ -37,7 +37,14 @@ export const ProjectCard = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GithubIcon> Repo </GithubIcon>
+              <Chip
+                variant="shadow"
+                color="primary"
+                startContent={<GithubIcon />}
+                className="normal-case"
+              >
+                Know more
+              </Chip>{" "}
             </a>
           </h2>
           <p className="text-justify">{props.data.about}</p>

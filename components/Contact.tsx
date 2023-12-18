@@ -3,9 +3,16 @@ import { ModalHeader, ModalBody, ModalFooter } from "@nextui-org/modal";
 import { Button } from "@nextui-org/button";
 import { Input, Textarea } from "@nextui-org/input";
 import { useForm, ValidationError } from "@formspree/react";
-import { MailIcon } from "./icons";
+import {
+  MailIcon,
+  LinkedInIcon,
+  InstagramIcon,
+  GithubIcon,
+  TwitterIcon,
+  BehanceIcon,
+} from "./icons";
 
-export const Contact = () => {
+export const ContactModal = () => {
   const [state, handleSubmit] = useForm("xwkgelag");
   if (state.succeeded) {
     return (
@@ -23,13 +30,30 @@ export const Contact = () => {
         Lets Connect
       </ModalHeader>
       <ModalBody>
-        <div>
+        <div className="flex flex-col gap-6">
           <a
             href="mailto:hardiksharma602@gmail.com"
             className="inline-flex items-center gap-2 hover:underline"
           >
             <MailIcon /> hardiksharma602@gmail.com
           </a>
+          <div className="flex flex-row space-x-8 items-center justify-start">
+            <a href="https://www.linkedin.com/in/hardik-sharma8/">
+              <LinkedInIcon />
+            </a>
+            <a href="https://github.com/HARDIK-SHARMA-08">
+              <GithubIcon />
+            </a>
+            <a href="https://twitter.com/Hardik602sharma">
+              <TwitterIcon />
+            </a>
+            <a href="https://www.instagram.com/_h.a.r.d.i.k">
+              <InstagramIcon />
+            </a>
+            <a href="https://www.behance.net/hardiksharma7">
+              <BehanceIcon />
+            </a>
+          </div>
         </div>
         <form onSubmit={handleSubmit}>
           <Input

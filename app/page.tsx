@@ -12,7 +12,7 @@ import {
   ProjectCard,
   Education,
   Experience,
-  Contact,
+  ContactModal,
 } from "@/components";
 import Slider from "react-slick";
 import data from "@/app/ProjectData.json";
@@ -21,6 +21,7 @@ import {
   RightArrowIcon,
   SkillIcon,
   LinkIcon,
+  LinkIcon2,
   ResumeIcon,
   MailIcon,
   EducationIcon,
@@ -34,27 +35,11 @@ interface ProjectData {
 }
 
 export default function Home() {
+  //Modal
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const sliderRef = useRef<Slider>(null);
-  const next = () => {
-    sliderRef.current?.slickNext();
-  };
-
-  const previous = () => {
-    sliderRef.current?.slickPrev();
-  };
-
-  var settings = {
-    dots: false,
-    speed: 500,
-    slidesToShow: 1,
-    swipeToSlide: true,
-    slidesToScroll: 1,
-    pauseOnHover: true,
-    fade: true,
-  };
-
+  //Project
   const [projectDetails, setProjectDetails] = useState<ProjectData | null>(
     null
   );
@@ -66,9 +51,32 @@ export default function Home() {
     return null; // or a loading state
   }
 
+  //Slider
+  const goToPrevSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide > 0 ? prevSlide - 1 : Object.keys(projectDetails).length - 1
+    );
+  };
+
+  const goToNextSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide < Object.keys(projectDetails).length - 1 ? prevSlide + 1 : 0
+    );
+  };
+
+  const renderCurrentProjectCard = () => {
+    const projectKeys = Object.keys(projectDetails);
+    const currentProjectKey = projectKeys[currentSlide];
+    const currentProjectData =
+      projectDetails[currentProjectKey as keyof ProjectData];
+
+    return <ProjectCard data={currentProjectData} />;
+  };
+
   return (
     <div className="max-w-screen p-8 pb-0 sm:p-14 sm:pb-0">
       <div className="grid grid-cols-12 gap-5 sm:gap-10">
+        {/* Image Card */}
         <div className="col-span-12 md:col-span-6 lg:col-span-3">
           <Card className="rounded-3xl h-[300px] md:h-[350px] lg:h-full">
             <Image
@@ -91,14 +99,13 @@ export default function Home() {
                   <ModalContent>
                     {(onClose) => (
                       <>
-                        <Contact />
+                        <ContactModal />
                       </>
                     )}
                   </ModalContent>
                 </Modal>
-
                 <a
-                  href="https://leetcode.com/hardiksharma08/"
+                  href="https://drive.google.com/file/d/1omEgF8azJFpf8YmfVwD23B8LdpzqKPzA/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -117,18 +124,21 @@ export default function Home() {
           </Card>
         </div>
 
+        {/* About Card */}
         <div className="col-span-12 md:col-span-6 lg:col-span-5">
           <Card className="rounded-3xl h-full lg:h-full">
             <About />
           </Card>
         </div>
 
+        {/* Stories Card */}
         <div className="hidden lg:block lg:col-span-4">
           <Card className="rounded-3xl h-[375px] items-center">
             <Stories />
           </Card>
         </div>
 
+        {/* Mobile Education Card */}
         <div className="inline-block col-span-12 md:col-span-12 lg:hidden ">
           <Card className="rounded-3xl h-full items-center justify-center pt-4">
             <CardHeader className="flex-col items-center top-0 absolute left-0 items-start ml-2 pt-0">
@@ -140,16 +150,16 @@ export default function Home() {
           </Card>
         </div>
 
+        {/* Project Card */}
         <div className="col-span-12 lg:col-span-7">
-          <Card className="rounded-3xl h-full justify-center">
-            <Slider ref={sliderRef} {...settings}>
-              <ProjectCard data={projectDetails.Project1} />
-            </Slider>
+          <Card className="rounded-3xl w-full justify-center">
+            {renderCurrentProjectCard()}
+
             <div className="flex flex-row items-center justify-center gap-3">
-              <button className="button" onClick={previous}>
+              <button className="button" onClick={goToPrevSlide}>
                 <LeftArrowIcon />
               </button>
-              <button className="button" onClick={next}>
+              <button className="button" onClick={goToNextSlide}>
                 <RightArrowIcon />
               </button>
             </div>
@@ -157,12 +167,14 @@ export default function Home() {
           </Card>
         </div>
 
+        {/* Experience Card */}
         <div className="col-span-12 lg:col-span-5">
           <Card className="rounded-3xl h-full p-6 justify-between">
             <Experience />
           </Card>
         </div>
 
+        {/* Skills Card */}
         <div className="col-span-12 sm:col-span-6 md:col-span-7 lg:col-span-8 lg:col-start-1">
           <Card className="rounded-3xl pt-12 pb-6 h-fit sm:h-full">
             <CardHeader className="flex-col items-center top-0 absolute items-start ml-2 pt-0">
@@ -174,6 +186,7 @@ export default function Home() {
           </Card>
         </div>
 
+        {/* Leetcode Card */}
         <div className="col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-4 lg:col-start-9 ">
           <Card className="rounded-3xl h-full w-full justify-center px-8 pb-4 pt-10">
             <CardHeader className="absolute flex flex-row gap-4 top-0 right-0 w-1/2 pl-8 pr-0 pt-0">
@@ -182,7 +195,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <LinkIcon />{" "}
+                <LinkIcon2 />{" "}
               </a>
               <Image
                 src="/leetcode.png"
@@ -194,6 +207,7 @@ export default function Home() {
           </Card>
         </div>
 
+        {/* Footer Card */}
         <div className="col-span-12 ">
           <Card className="rounded-t-3xl rounded-b-none h-full p-10">
             <Footer />

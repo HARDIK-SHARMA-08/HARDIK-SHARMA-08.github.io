@@ -7,7 +7,7 @@ import { Leetcode } from "./Leetcode";
 import { Footer } from "./Footer";
 import { Education } from "./Education";
 import { Experience } from "./Experience";
-import { Contact } from "./Contact";
+import { ContactModal } from "./Contact";
 
 export {
   About,
@@ -19,5 +19,5 @@ export {
   Footer,
   Education,
   Experience,
-  Contact,
+  ContactModal,
 };

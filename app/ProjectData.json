@@ -1,6 +1,7 @@
 {
   "Project1": {
     "key": "1",
+    "project" : "uncommon",
     "name": "MERN Ecommerce Application",
     "link": "https://uncommon.cyclic.app/",
     "github": "https://github.com/HARDIK-SHARMA-08/MERN-Ecommerce-App",
@@ -17,16 +18,17 @@
   },
   "Project2": {
     "key": "2",
-    "name": "MERN Application",
-    "link": "https://stackoverflow.com/questions/74421327/nextrouter-was-not-mounted-next-js",
-    "github": "#",
-    "about": "Effortless e-commerce with secure authentication, Braintree PayPal Payment integration, and admin-exclusive CRUD for categories and products.",
+    "project": "ICI Fest 2023",
+    "name": "ICI Fest 2023",
+    "link": "https://icifest.skit.ac.in/",
+    "github": "https://github.com/HARDIK-SHARMA-08/icifest-website",
+    "about": "Optimized and maintained a successful College Fest website for 4000 users, ensuring seamless user experience and responsive design.",
     "techStack": [
-      "MongoDB",
-      "Node.js",
       "React.js",
+      "Vite.js",
       "Tailwind CSS",
-      "Restful API"
-    ]
+      "Javascript"
+    ],
+    "img": "/ici.png"
   }
 }
