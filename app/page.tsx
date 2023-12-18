@@ -5,7 +5,6 @@ import { Card, CardHeader, CardFooter } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import {
   MarqueeComponent,
-  ThemeSwitch,
   About,
   Stories,
   Leetcode,
@@ -13,10 +12,21 @@ import {
   ProjectCard,
   Education,
   Experience,
+  Contact,
 } from "@/components";
 import Slider from "react-slick";
 import data from "@/app/ProjectData.json";
-import { LeftArrow, RightArrow } from "@/components/icons";
+import {
+  LeftArrowIcon,
+  RightArrowIcon,
+  SkillIcon,
+  LinkIcon,
+  ResumeIcon,
+  MailIcon,
+  EducationIcon,
+} from "@/components/icons";
+import { Button } from "@nextui-org/button";
+import { Modal, ModalContent, useDisclosure } from "@nextui-org/modal";
 
 interface ProjectData {
   Project1: Object;
@@ -24,6 +34,8 @@ interface ProjectData {
 }
 
 export default function Home() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   const sliderRef = useRef<Slider>(null);
   const next = () => {
     sliderRef.current?.slickNext();
@@ -65,8 +77,42 @@ export default function Home() {
               className="w-full h-full object-cover"
               src="/Photo.jpg"
             />
-            <CardFooter className="p-0 backdrop-filter backdrop-blur-lg bg-opacity-30 justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-2 absolute before:rounded-3xl rounded-3xl bottom-1 w-11/12 place-self-center shadow-small  z-10">
-              <ThemeSwitch />
+            <CardFooter className="p-0 backdrop-filter backdrop-blur-lg bg-opacity-30 before:bg-white/10 border-white/20 border-1 py-2 absolute rounded-full bottom-2 w-11/12 place-self-center shadow-small z-10">
+              <div className="w-full flex flex-row justify-evenly items-center">
+                <Button
+                  color="primary"
+                  radius="full"
+                  startContent={<MailIcon />}
+                  onPress={onOpen}
+                >
+                  Contact
+                </Button>
+                <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+                  <ModalContent>
+                    {(onClose) => (
+                      <>
+                        <Contact />
+                      </>
+                    )}
+                  </ModalContent>
+                </Modal>
+
+                <a
+                  href="https://leetcode.com/hardiksharma08/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="text-xs inline-flex gap-2 items-center font-bold uppercase">
+                    <Button
+                      color="primary"
+                      radius="full"
+                      startContent={<ResumeIcon />}
+                    >
+                      Resume
+                    </Button>
+                  </div>
+                </a>
+              </div>
             </CardFooter>
           </Card>
         </div>
@@ -86,8 +132,8 @@ export default function Home() {
         <div className="inline-block col-span-12 md:col-span-12 lg:hidden ">
           <Card className="rounded-3xl h-full items-center justify-center pt-4">
             <CardHeader className="flex-col items-center top-0 absolute left-0 items-start ml-2 pt-0">
-              <p className="text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold">
-                Education
+              <p className="text-tiny bg-opacity-50 text-white bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold inline-flex gap-2">
+                <EducationIcon /> Education
               </p>
             </CardHeader>
             <Education />
@@ -101,10 +147,10 @@ export default function Home() {
             </Slider>
             <div className="flex flex-row items-center justify-center gap-3">
               <button className="button" onClick={previous}>
-                <LeftArrow />
+                <LeftArrowIcon />
               </button>
               <button className="button" onClick={next}>
-                <RightArrow />
+                <RightArrowIcon />
               </button>
             </div>
             <br />
@@ -119,9 +165,9 @@ export default function Home() {
 
         <div className="col-span-12 sm:col-span-6 md:col-span-7 lg:col-span-8 lg:col-start-1">
           <Card className="rounded-3xl pt-12 pb-6 h-fit sm:h-full">
-            <CardHeader className="flex-col items-center top-0 absolute sm:absolute items-start ml-2 pt-0">
-              <p className="relative text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold">
-                💻 Languages & Technologies
+            <CardHeader className="flex-col items-center top-0 absolute items-start ml-2 pt-0">
+              <p className="relative text-tiny bg-opacity-50 text-white bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold inline-flex gap-2">
+                <SkillIcon /> Skills
               </p>
             </CardHeader>
             <MarqueeComponent />
@@ -129,11 +175,20 @@ export default function Home() {
         </div>
 
         <div className="col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-4 lg:col-start-9 ">
-          <Card className="rounded-3xl h-full justify-center px-8 pb-4 pt-10">
-            <CardHeader className="flex-col items-center top-0 absolute sm:absolute">
-              <p className="relative left-10 text-tiny bg-opacity-50 text-white/60 bg-black dark:text-black dark:bg-yellow-300 dark:bg-opacity-50 rounded-lg w-fit shadow-small p-1 px-6 uppercase font-bold">
-                LeetCode
-              </p>
+          <Card className="rounded-3xl h-full w-full justify-center px-8 pb-4 pt-10">
+            <CardHeader className="absolute flex flex-row gap-4 top-0 right-0 w-1/2 pl-8 pr-0 pt-0">
+              <a
+                href="https://leetcode.com/hardiksharma08/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkIcon />{" "}
+              </a>
+              <Image
+                src="/leetcode.png"
+                className="w-28 lg:w-48 rounded-none rounded-bl-xl lg:rounded-bl-2xl bg-white"
+                alt="Picture of the author"
+              />
             </CardHeader>
             <Leetcode />
           </Card>

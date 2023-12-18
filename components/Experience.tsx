@@ -8,16 +8,16 @@ export const Experience = () => {
     <div>
       <div className="h-20 w-full rounded-2xl p-4 sm:p-10 bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-rose-400 via-fuchsia-500 to-indigo-500 dark:bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 flex justify-center items-center relative">
         <div>
-          <Image src={work} className="w-22" alt="Picture of the author" />
+          <Image src={work} className="w-22 md:w-20 lg:w-22" alt="Picture of the author" />
         </div>
         <h4 className="font-extrabold text-3xl lg:text-4xl text-black dark:text-white opacity-50 uppercase">
           Experience
         </h4>
       </div>
-      <div className="flex justify-center flex-col h-fit lg:h-full pt-4 pb-0 lg:pb-4 ">
+      <div className="flex justify-center flex-col h-fit lg:h-full pt-4 pb-0 px-4 lg:pb-4  ">
         <ul
           role="list"
-          className="marker:text-slate-400 list-disc pl-5 space-y-3"
+          className="marker:text-neutral-700 marker:text-3xl marker:font-extrabold list-decimal pl-5 space-y-3"
         >
           <li className="flex flex-col">
             <li>
