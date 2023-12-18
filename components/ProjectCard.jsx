@@ -3,7 +3,6 @@ import { Chip } from "@nextui-org/chip";
 import { GithubIcon, LinkIcon } from "./icons";
 
 export const ProjectCard = (props) => {
-
   return (
     <>
       <div className="flex flex-col w-full justify-between">
@@ -50,7 +49,10 @@ export const ProjectCard = (props) => {
           <p className="text-justify">{props.data.about}</p>
           <div className="flex flex-wrap gap-2 mt-4">
             {props.data.techStack.map((Tech, index) => (
-              <Chip key={index}>{Tech}</Chip>
+              <Chip variant="flat" color="primary" key={index}>
+                {" "}
+                <div className="font-bold">{Tech}</div>
+              </Chip>
             ))}
           </div>
         </div>
