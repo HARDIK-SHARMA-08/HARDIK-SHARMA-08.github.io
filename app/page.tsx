@@ -184,9 +184,9 @@ export default function Home() {
         <div className="col-span-12 sm:col-span-6 md:col-span-7 lg:col-span-8 lg:col-start-1">
           <Card className="rounded-3xl pt-12 pb-6 h-fit sm:h-full">
             <CardHeader className="flex-col items-center top-0 absolute items-start ml-2 pt-0">
-              <p className="relative text-tiny bg-opacity-50 text-white bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold inline-flex gap-2">
+              <div className="relative text-tiny bg-opacity-50 text-white bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold inline-flex gap-2">
                 <SkillIcon /> Skills
-              </p>
+              </div>
             </CardHeader>
             <MarqueeComponent />
           </Card>

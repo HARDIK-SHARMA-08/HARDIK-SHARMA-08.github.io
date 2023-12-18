@@ -11,14 +11,30 @@ export const Leetcode = () => {
       });
   }, []);
 
+  const progressStop = data.totalSolved
+    ? `${(data.totalSolved / data.totalQuestions) * 100}%`
+    : "0%";
+
+  const style = {
+    width: "100px",
+    height: "100px",
+    borderRadius: "50%",
+    background: `conic-gradient(#facc15 0% ${progressStop}, #252527 ${progressStop} 100%)`,
+  };
+
   return (
     <>
       <div className="flex flex-row justify-between items-center">
-        <div className="h-24 w-24 rounded-full border-black-800 dark:border-white-600 border-4 pt-2 flex flex-col items-center">
-          <p className="text-gray-600 text-xs">All</p>
-          <h1 className="text-2xl">{data?.totalSolved}</h1>
-          <hr className="w-1/4 bg-gray-600" />
-          <p className="text-gray-600 text-xs">{data?.totalQuestions}</p>
+        <div
+          className="h-24 w-24 rounded-full flex flex-col items-center justify-center"
+          style={style}
+        >
+          <div className="flex flex-col items-center justify-center h-20 w-20 rounded-full bg-white dark:bg-neutral-900 ">
+            <p className="text-gray-600 text-xs">All</p>
+            <h1 className="text-2xl z-10">{data?.totalSolved}</h1>
+            <hr className="w-1/4 bg-gray-600 mb-1" />
+            <p className="text-gray-600 text-xs ">{data?.totalQuestions}</p>
+          </div>
         </div>
         <div className="flex flex-row gap-8">
           <div className="">
