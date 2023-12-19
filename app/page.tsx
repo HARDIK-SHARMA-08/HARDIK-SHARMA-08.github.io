@@ -23,6 +23,10 @@ import {
   ResumeIcon,
   MailIcon,
   EducationIcon,
+  MouseIcon,
+  MouseRightIcon,
+  MouseLeftIcon,
+  HandIcon,
 } from "@/components/icons";
 import { Button } from "@nextui-org/button";
 import { Modal, ModalContent, useDisclosure } from "@nextui-org/modal";
@@ -75,7 +79,7 @@ export default function Home() {
     <div className="max-w-screen p-8 pb-0 sm:p-14 sm:pb-0">
       <div className="grid grid-cols-12 gap-5 sm:gap-10">
         {/* Image Card */}
-        <div className="col-span-12 md:col-span-6 lg:col-span-3">
+        <div className="col-span-12 md:col-span-6 lg:col-span-3" id="here">
           <Card className="rounded-3xl h-[300px] md:h-[350px] lg:h-full">
             <Image
               removeWrapper
@@ -183,9 +187,31 @@ export default function Home() {
         {/* Skills Card */}
         <div className="col-span-12 sm:col-span-6 md:col-span-7 lg:col-span-8 lg:col-start-1">
           <Card className="rounded-3xl pt-12 pb-6 h-fit sm:h-full">
-            <CardHeader className="flex-col items-center top-0 absolute items-start ml-2 pt-0">
+            <CardHeader className="absolute flex flex-row items-center justify-between top-0 gap-6 items-start ml-2 pt-0">
               <div className="relative text-tiny bg-opacity-50 text-white bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold inline-flex gap-2">
                 <SkillIcon /> Skills
+              </div>
+              <div className="relative flex flex-row gap-1 top-4 right-4 hidden lg:flex">
+                <div className="animate-wiggleLeft">
+                  <MouseLeftIcon />
+                </div>
+                <div className="animate-pulse">
+                  <MouseIcon />
+                </div>
+                <div className="animate-wiggleRight">
+                  <MouseRightIcon />
+                </div>
+              </div>
+              <div className="relative flex flex-row gap-1 top-3 right-3 animate-wiggle flex lg:hidden">
+                <div className="animate-wiggleLeft">
+                  <MouseLeftIcon />
+                </div>
+                <div className="animate-pulse">
+                  <HandIcon />
+                </div>
+                <div className="animate-wiggleRight">
+                  <MouseRightIcon />
+                </div>
               </div>
             </CardHeader>
             <MarqueeComponent />

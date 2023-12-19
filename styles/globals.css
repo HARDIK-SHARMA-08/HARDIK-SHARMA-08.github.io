@@ -2,5 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes wiggleLeft {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px); /* Adjust the distance as needed */
+  }
+}
 
+.animate-wiggleLeft {
+  animation: wiggleLeft 2s infinite;
+}
 
+@keyframes wiggleRight {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(5px); /* Adjust the distance as needed */
+    }
+  }
+  
+  .animate-wiggleRight {
+    animation: wiggleRight 2s infinite;
+  }
+  

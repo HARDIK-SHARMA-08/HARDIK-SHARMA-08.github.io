@@ -34,10 +34,22 @@ export const Footer = () => {
           <BehanceIcon />
         </a>
       </div>
-      <hr className="block opacity-50 md:hidden"/>
+      <hr className="block opacity-50 md:hidden" />
       <div>
-        <p className="w-full text-center text-gray-600">
-          Copyright © {currentYear}
+        <p className="w-full text-lg text-center text-gray-600">
+          Made with ❤️ and{" "}
+          <a
+            href="https://nextjs.org/"
+            className="text-blue-700 hover:underline"
+          >
+            NextJS.
+          </a>
+        </p>
+        <p className="w-full text-tiny text-center text-gray-600">
+          Copyright © 2021-{currentYear}{" "}
+          <a href="#here" className="text-blue-700 hover:underline">
+            Hardik Sharma
+          </a>
         </p>
       </div>
     </div>
