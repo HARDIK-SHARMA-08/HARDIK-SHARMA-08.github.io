@@ -46,6 +46,19 @@ export const MarqueeComponent = () => {
             <div className="text-md pt-2 text-gray-500">C++</div>
           </div>
         </div>
+
+        <div className="h-full w-full px-4">
+          <div className="flex flex-col items-center justify-center">
+            <Image
+              removeWrapper
+              alt="Card background"
+              className="h-16 lg:h-20 object-scale-down"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+            />{" "}
+            <div className="text-md pt-2 text-gray-500">Java</div>
+          </div>
+        </div>
+
         <div className="h-full w-full px-4 ">
           <div className="flex flex-col items-center justify-center">
             <Image
@@ -259,3 +272,5 @@ export const MarqueeComponent = () => {
     </div>
   );
 };
+
+
