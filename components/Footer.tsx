@@ -36,13 +36,13 @@ export const Footer = () => {
       </div>
       <hr className="block opacity-50 md:hidden" />
       <div>
-        <p className="w-full text-lg text-center text-gray-600">
+        <p className="w-full text-sm md:text-lg text-center text-gray-600">
           Made with ❤️ and{" "}
           <a
             href="https://nextjs.org/"
             className="text-blue-700 hover:underline"
           >
-            NextJS.
+            NextJS
           </a>
         </p>
         <p className="w-full text-tiny text-center text-gray-600">

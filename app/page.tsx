@@ -84,8 +84,14 @@ export default function Home() {
             <Image
               removeWrapper
               alt="Card background"
-              className="w-full h-full object-cover"
-              src="/Photo.jpg"
+              className="w-full h-full object-cover hidden lg:flex"
+              src="/Photo2.png"
+            />
+            <Image
+              removeWrapper
+              alt="Card background"
+              className="w-full h-full object-cover flex lg:hidden"
+              src="/Photo4.png"
             />
             <CardFooter className="p-0 backdrop-filter backdrop-blur-lg bg-opacity-30 before:bg-white/10 border-white/20 border-1 py-2 absolute rounded-full bottom-2 w-11/12 place-self-center shadow-small z-10">
               <div className="w-full flex flex-row justify-evenly items-center">
@@ -134,14 +140,14 @@ export default function Home() {
         </div>
 
         {/* Stories Card */}
-        <div className="hidden lg:block lg:col-span-4">
+        <div className="hidden lg:col-span-4">
           <Card className="rounded-3xl h-[375px] items-center">
             <Stories />
           </Card>
         </div>
 
         {/* Mobile Education Card */}
-        <div className="inline-block col-span-12 md:col-span-12 lg:hidden ">
+        <div className="col-span-12 md:col-span-12 lg:col-span-4 ">
           <Card className="rounded-3xl h-full items-center justify-center pt-4">
             <CardHeader className="flex-col items-center top-0 absolute left-0 items-start ml-2 pt-0">
               <p className="text-tiny bg-opacity-50 text-white bg-black dark:text-black dark:bg-white dark:bg-opacity-50 rounded-b-xl w-fit shadow-small p-1 px-6 uppercase font-bold inline-flex gap-2">
