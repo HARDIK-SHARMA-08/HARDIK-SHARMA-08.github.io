@@ -2,44 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Chip } from "@nextui-org/chip";
 import { GithubIcon2, LinkIcon } from "./icons";
 
-export const ProjectCard = (props: {
-  data: {
-    img: any;
-    link: string | undefined;
-    project:
-      | string
-      | number
-      | boolean
-      | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-      | Iterable<React.ReactNode>
-      | React.ReactPortal
-      | React.PromiseLikeOfReactNode
-      | null
-      | undefined;
-    name:
-      | string
-      | number
-      | boolean
-      | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-      | Iterable<React.ReactNode>
-      | React.ReactPortal
-      | React.PromiseLikeOfReactNode
-      | null
-      | undefined;
-    github: string | undefined;
-    about:
-      | string
-      | number
-      | boolean
-      | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-      | Iterable<React.ReactNode>
-      | React.ReactPortal
-      | React.PromiseLikeOfReactNode
-      | null
-      | undefined;
-    techStack: any[];
-  };
-}) => {
+export const ProjectCard = (props) => {
   return (
     <>
       <div className="flex flex-col w-full justify-between">
