@@ -9,7 +9,7 @@ export const Experience = () => {
         <div>
           <Image
             src="work.png"
-            className="w-22 md:w-20 lg:w-22"
+            className="w-22 sm:w-12 md:w-20 lg:w-22"
             alt="Picture of the author"
           />
         </div>

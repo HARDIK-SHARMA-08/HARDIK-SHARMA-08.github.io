@@ -226,8 +226,8 @@ export default function Home() {
 
         {/* Leetcode Card */}
         <div className="col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-4 lg:col-start-9 ">
-          <Card className="rounded-3xl h-full w-full justify-center px-8 pb-4 pt-10">
-            <CardHeader className="absolute flex flex-row gap-4 top-0 right-0 w-1/2 pl-8 pr-0 pt-0">
+          <Card className="rounded-3xl h-full w-full justify-between">
+            <CardHeader className="aboslute flex flex-row-reverse gap-4 items-center justify-center top-0 w-full bg-white p-0">
               <a
                 href="https://leetcode.com/hardiksharma08/"
                 target="_blank"
@@ -237,11 +237,13 @@ export default function Home() {
               </a>
               <Image
                 src="/leetcode.png"
-                className="w-28 lg:w-48 rounded-none rounded-bl-xl lg:rounded-bl-2xl bg-white"
+                className="w-28 rounded-none rounded-bl-xl lg:rounded-bl-2xl"
                 alt="Picture of the author"
               />
             </CardHeader>
-            <Leetcode />
+            <div className="py-6">
+              <Leetcode />
+            </div>
           </Card>
         </div>
 

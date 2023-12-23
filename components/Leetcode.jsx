@@ -24,7 +24,7 @@ export const Leetcode = () => {
 
   return (
     <>
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex flex-row justify-around items-center">
         <div
           className="h-24 w-24 rounded-full flex flex-col items-center justify-center"
           style={style}
@@ -32,8 +32,8 @@ export const Leetcode = () => {
           <div className="flex flex-col items-center justify-center h-20 w-20 rounded-full bg-white dark:bg-neutral-900 ">
             <p className="text-gray-600 text-xs">All</p>
             <h1 className="text-2xl z-10">{data?.totalSolved}</h1>
-            <hr className="w-1/4 bg-gray-600 mb-1" />
-            <p className="text-gray-600 text-xs ">{data?.totalQuestions}</p>
+            {/* <hr className="w-1/4 bg-gray-600 mb-1" />
+            <p className="text-gray-600 text-xs ">{data?.totalQuestions}</p> */}
           </div>
         </div>
         <div className="flex flex-row gap-8">
@@ -46,15 +46,15 @@ export const Leetcode = () => {
             <p className="">
               {" "}
               {data?.easySolved}
-              <span className="text-gray-600">/{data?.totalEasy}</span>
+              {/* <span className="text-gray-600">/{data?.totalEasy}</span> */}
             </p>
             <p className="">
               {data?.mediumSolved}
-              <span className="text-gray-600">/{data?.totalMedium}</span>
+              {/* <span className="text-gray-600">/{data?.totalMedium}</span> */}
             </p>
             <p className="">
               {data?.hardSolved}
-              <span className="text-gray-600">/{data?.totalHard}</span>
+              {/* <span className="text-gray-600">/{data?.totalHard}</span> */}
             </p>
           </div>
         </div>

@@ -14,7 +14,7 @@ export const ProjectCard = (props) => {
             <div className="absolute w-fit bg-[#0070f0] top-0 left-0 p-2 px-3 lg:p-4 rounded-tl-3xl rounded-br-3xl">
               <a
                 href={props.data.link}
-                className="duration-200 flex flex-row gap-2 items-center"
+                className="duration-200 flex flex-row-reverse gap-2 items-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
