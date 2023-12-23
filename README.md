@@ -1,40 +1,49 @@
-# Next.js & NextUI Template
+# 🌟 Portfolio 
 
-This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
+Welcome to my personal portfolio repository!
 
-## Technologies Used
+## 🚀 Live Demo
+🔗 **[Link](https://hardik-sharma-08.github.io)**
 
-- [Next.js 13](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+## 📖 Description
+
+This repository contains the source code for my personal portfolio, showcasing my skills, projects, and achievements. Explore my journey in the world of software development and design. Feel free to reach out for collaboration or to learn more about my work.
+
+## 🛠️ Tech Stack
+
+- Next.js
+- React
+- NextUI v2
+- Tailwind CSS
+- TypeScript
+- next-themes
+
+## 📂 Project Structure
+
+- 📂 `app/`: Contains the source code for the portfolio.
+- 🌐 `public/`: Hosts static assets.
+
+## ✨ Features
+
+- Responsive design for a seamless experience across devices.
+- Project highlights, skills, and detailed about me section.
 
 ## How to Use
 
-
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
-
-### Install dependencies
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### Run the development server
+2. Run the development server
 
 ```bash
 npm run dev
 ```
 
-## License
+## 🤝 Connect
 
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+Let's connect! Find me on [LinkedIn](https://www.linkedin.com/in/hardik-sharma8/) and [Twitter](https://twitter.com/Hardik602sharma).
+
+Feel free to explore, provide feedback, and get in touch. Happy coding! 🚀
