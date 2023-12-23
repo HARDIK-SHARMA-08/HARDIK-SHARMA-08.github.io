@@ -1,4 +1,5 @@
 "use client";
+import { Chip } from "@nextui-org/chip";
 import { Image } from "@nextui-org/image";
 import Slider from "react-slick";
 
@@ -83,7 +84,7 @@ export const MarqueeComponent = () => {
           </div>
         </div>
 
-        <div className="h-full w-full px-4 ">
+        <div className="h-full w-full px-4">
           <div className="flex flex-col items-center justify-center">
             <Image
               removeWrapper
@@ -128,18 +129,6 @@ export const MarqueeComponent = () => {
               src="https://cdn.simpleicons.org/bootstrap/"
             />
             <div className="text-md pt-2 text-gray-500">Bootstrap</div>
-          </div>
-        </div>
-
-        <div className="h-full w-full px-4 ">
-          <div className="flex flex-col items-center justify-center">
-            <Image
-              removeWrapper
-              alt="Card background"
-              className="h-16 lg:h-20 object-scale-down"
-              src="https://cdn.simpleicons.org/amazonaws/"
-            />
-            <div className="text-md pt-2 text-gray-500">AWS</div>
           </div>
         </div>
 
@@ -248,6 +237,48 @@ export const MarqueeComponent = () => {
                 removeWrapper
                 alt="Card background"
                 className="h-16 lg:h-20 object-scale-down"
+                src="https://cdn.simpleicons.org/adobephotoshop/"
+              />
+            </div>
+            <div className="text-md pt-2 text-gray-500">Photoshop</div>
+          </div>
+        </div>
+
+        <div className="h-full w-full px-4">
+          <div className="flex flex-col items-center justify-center">
+            <div>
+              <Image
+                removeWrapper
+                alt="Card background"
+                className="h-16 lg:h-20 object-scale-down"
+                src="https://cdn.simpleicons.org/adobepremierepro/"
+              />
+            </div>
+            <div className="text-md pt-2 text-gray-500">PremierePro</div>
+          </div>
+        </div>
+
+        <div className="h-full w-full px-4">
+          <div className="flex flex-col items-center justify-center">
+            <div>
+              <Image
+                removeWrapper
+                alt="Card background"
+                className="h-16 lg:h-20 object-scale-down"
+                src="https://cdn.simpleicons.org/adobeillustrator/"
+              />
+            </div>
+            <div className="text-md pt-2 text-gray-500">Illustrator</div>
+          </div>
+        </div>
+
+        <div className="h-full w-full px-4">
+          <div className="flex flex-col items-center justify-center">
+            <div>
+              <Image
+                removeWrapper
+                alt="Card background"
+                className="h-16 lg:h-20 object-scale-down"
                 src="https://cdn.simpleicons.org/figma/"
               />
             </div>
@@ -272,5 +303,3 @@ export const MarqueeComponent = () => {
     </div>
   );
 };
-
-
