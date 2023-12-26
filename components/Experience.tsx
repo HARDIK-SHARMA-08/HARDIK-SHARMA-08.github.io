@@ -25,7 +25,7 @@ export const Experience = () => {
           <li className="flex flex-col">
             <li>
               <div className="uppercase font-bold text-md inline-flex items-center gap-2 lg:text-xl hover:underline">
-                Software Developer <LinkIcon />
+                Software Developer Intern <LinkIcon />
               </div>
 
               <div className="text-sm text-gray-500">
@@ -43,7 +43,7 @@ export const Experience = () => {
           <li className="flex flex-col">
             <li>
               <div className="uppercase font-bold text-md inline-flex items-center gap-2 lg:text-xl hover:underline">
-                Software Developer <LinkIcon />
+                Software Developer Intern<LinkIcon />
               </div>
               <div className="text-sm text-gray-500">
                 Airdrive Smart Solutions{" "}
