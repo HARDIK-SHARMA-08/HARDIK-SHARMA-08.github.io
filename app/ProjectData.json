@@ -1,5 +1,5 @@
-{
-  "Project1": {
+[
+  {
     "key": "1",
     "project" : "uncommon",
     "name": "MERN Ecommerce Application",
@@ -16,7 +16,7 @@
     ],
     "img":"/uncommon.png"
   },
-  "Project2": {
+  {
     "key": "2",
     "project": "ICI Fest 2023",
     "name": "ICI Fest 2023 (College Fest)",
@@ -31,4 +31,4 @@
     ],
     "img": "/ici.png"
   }
-}
+]

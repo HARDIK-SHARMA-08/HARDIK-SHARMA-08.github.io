@@ -3,17 +3,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Card, CardHeader, CardFooter } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
-import {
-  MarqueeComponent,
-  About,
-  Stories,
-  Leetcode,
-  Footer,
-  ProjectCard,
-  Education,
-  Experience,
-  ContactModal,
-} from "@/components";
 import data from "@/app/ProjectData.json";
 import {
   LeftArrowIcon,
@@ -30,17 +19,24 @@ import {
 } from "@/components/icons";
 import { Button } from "@nextui-org/button";
 import { Modal, ModalContent, useDisclosure } from "@nextui-org/modal";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { ContactModal } from "@/components/Contact";
+import { ProjectCard } from "@/components/ProjectCard";
+import { About } from "@/components/About";
+import { Stories } from "@/components/Stories";
+import { Education } from "@/components/Education";
+import { Experience } from "@/components/Experience";
+import { MarqueeComponent } from "@/components/Marquee";
+import { Leetcode } from "@/components/Leetcode";
+import { Footer } from "@/components/Footer";
 
-interface ProjectData {
-  Project1: Object;
-  Project2: Object;
-}
+
 
 export default function Home() {
   //Modal
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [projectDetails, setProjectDetails] = useState<ProjectData | null>(
+  const [projectDetails, setProjectDetails] = useState<any>(
     null
   );
 
@@ -49,31 +45,6 @@ export default function Home() {
     setProjectDetails(data);
   }, []);
 
-  if (!projectDetails) {
-    return null; // or a loading state
-  }
-
-  //Slider
-  const goToPrevSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide > 0 ? prevSlide - 1 : Object.keys(projectDetails).length - 1
-    );
-  };
-
-  const goToNextSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide < Object.keys(projectDetails).length - 1 ? prevSlide + 1 : 0
-    );
-  };
-
-  const renderCurrentProjectCard = () => {
-    const projectKeys = Object.keys(projectDetails);
-    const currentProjectKey = projectKeys[currentSlide];
-    const currentProjectData =
-      projectDetails[currentProjectKey as keyof ProjectData];
-
-    return <ProjectCard data={currentProjectData} />;
-  };
 
   return (
     <div className="max-w-screen p-8 pb-0 sm:p-14 sm:pb-0">
@@ -160,27 +131,17 @@ export default function Home() {
 
         {/* Project Card */}
         <div className="col-span-12 lg:col-span-7">
-          <Card className="rounded-3xl w-full justify-center ">
-            <div className={`transition-opacity duration-500`}>
-              {renderCurrentProjectCard()}
-            </div>
-
-            <div className="flex flex-row items-center justify-center gap-3">
-              <button
-                className="button hover:scale-125 duration-200"
-                onClick={goToPrevSlide}
-              >
-                <LeftArrowIcon />
-              </button>
-              <button
-                className="button hover:scale-125 duration-200"
-                onClick={goToNextSlide}
-              >
-                <RightArrowIcon />
-              </button>
-            </div>
-            <br />
-          </Card>
+          <Carousel className="w-full">
+            <CarouselContent>
+              {projectDetails?.map((data: any, index: any) => (
+                <CarouselItem key={index}>
+                    <ProjectCard data={data} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
 
         {/* Experience Card */}
