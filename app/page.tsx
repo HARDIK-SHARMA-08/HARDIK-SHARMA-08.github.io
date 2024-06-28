@@ -62,13 +62,7 @@ export default function Home() {
               <Image
                 removeWrapper
                 alt="Card background"
-                className="w-full h-full object-cover hidden lg:flex"
-                src="/Photo.jpg"
-              />
-              <Image
-                removeWrapper
-                alt="Card background"
-                className="w-full h-full object-cover flex lg:hidden"
+                className="w-full h-full object-cover "
                 src="/Photo.jpg"
               />
             </FollowerPointerCard>
