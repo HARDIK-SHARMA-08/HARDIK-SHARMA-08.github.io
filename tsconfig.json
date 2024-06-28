@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Projects.jsx", "components/ProjectCard.jsx", "components/Leetcode.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Projects.jsx", "components/ProjectCard.jsx", "components/Leetcode.jsx", "tailwind.config.js"],
   "exclude": ["node_modules"]
 }

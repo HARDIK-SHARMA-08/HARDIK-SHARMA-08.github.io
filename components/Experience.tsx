@@ -30,8 +30,8 @@ export const Experience = () => {
               <div className="uppercase font-bold text-md inline-flex items-center gap-2 lg:text-xl hover:underline">
                 Software Developer <LinkIcon />
               </div>
-              <div className="text-sm text-gray-500">
-                Vanshiv Technologies - Intern
+              <div className="text-sm text-gray-500 line-clamp-1 hover:line-clamp-2">
+                Vanshiv Technologies - ASE
               </div>
             </div>
           </div>

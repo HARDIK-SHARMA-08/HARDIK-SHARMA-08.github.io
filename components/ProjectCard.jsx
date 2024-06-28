@@ -5,33 +5,22 @@ import { Card, CardHeader, CardFooter } from "@nextui-org/card";
 
 
 export const ProjectCard = (props) => {
+  const [clicked, setClicked] = useState(false);
   return (
     <>
-      <Card className="rounded-3xl w-full justify-center">
-        <div className="flex flex-col w-full justify-between">
-          <div
-            className={`h-28 lg:h-52 w-full rounded-t-3xl bg-cover bg-top flex justify-center items-center relative`}
-            style={{ backgroundImage: `url(${props.data.img})` }}
-          >
-            <div className="w-full h-full flex flex-col justify-center items-center backdrop-blur">
-              <div className="hidden md:absolute w-fit bg-[#0070f0] top-0 left-0 p-2 px-3 lg:p-4 rounded-tl-3xl rounded-br-3xl">
-                <a
-                  href={props.data.link}
-                  className="duration-200 flex flex-row-reverse gap-2 items-center"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LinkIcon />
-                  <div className="text-white hover:underline">Live Preview</div>
-                </a>
-              </div>
-
-              <h4 className="font-bold text-3xl lg:text-5xl text-black">
-                {props.data.project}
-              </h4>
-            </div>
+      <Card className="rounded-3xl min-h-full w-full justify-center">
+        <div
+          className={`h-[500px] md:h-[400px] bg-white w-full rounded-t-3xl bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center relative`}
+          style={{
+            backgroundImage: `url(${props.data.img})`
+          }}
+        >
+          <div className="w-full h-full flex flex-col justify-start items-center backdrop-blur">
+            <h4 className="absolute top-20 font-bold text-3xl lg:text-5xl text-black">
+              {props.data.project}
+            </h4>
           </div>
-          <div className="p-6 pb-6">
+          <div className="p-6 pb-6 absolute bg-white dark:bg-[#18181B] bottom-0 m-2 rounded-3xl min-h-5">
             <h2 className="uppercase font-bold text-center flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 pb-4">
               {props.data.name}{" "}
               <div className="flex flex-row gap-4">
@@ -44,7 +33,7 @@ export const ProjectCard = (props) => {
                     variant="shadow"
                     color="primary"
                     startContent={<LiveLinkIcon />}
-                    className="flex md:hidden normal-case"
+                    className="flex normal-case"
                   >
                     Live Preview
                   </Chip>{" "}
@@ -60,25 +49,24 @@ export const ProjectCard = (props) => {
                     startContent={<GithubIcon2 />}
                     className="normal-case"
                   >
-                    Know more
+                    Github
                   </Chip>{" "}
                 </a>
               </div>
             </h2>
 
-            <p className="text-justify text-sm md:text-base">{props.data.about}</p>
+            <span className={`text-justify text-sm md:text-base ${clicked ? "line-clamp-4" : "line-clamp-3"}`} onClick={() => setClicked(!clicked)}>{props.data.about}</span>
             <div className="flex flex-wrap gap-2 mt-4">
-              {props.data.techStack.map((Tech, index) => (
+              {props.data.techStack.map((item, index) => (
                 <Chip variant="flat" color="primary" key={index}>
                   {" "}
-                  <div className="font-bold">{Tech}</div>
+                  <div className="font-bold">{item}</div>
                 </Chip>
               ))}
             </div>
           </div>
         </div>
-      </Card>
-
+      </Card >
     </>
   );
 };
