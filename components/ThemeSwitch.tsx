@@ -10,15 +10,13 @@ export const ThemeSwitch = () => {
   };
 
   return (
-    <>
-      <Switch
-        defaultSelected
-        size="lg"
-        color="success"
-        startContent={<SunFilledIcon size={22} />}
-        endContent={<MoonFilledIcon size={22} />}
-        onChange={onChange}
-      />
-    </>
+    <Switch
+      defaultSelected
+      size="lg"
+      color="success"
+      startContent={<SunFilledIcon size={22} />}
+      endContent={<MoonFilledIcon size={22} />}
+      onChange={onChange}
+    />
   );
 };

@@ -1,46 +1,41 @@
 "use client";
-import React from "react";
-import { useEffect, useState } from "react";
-import { Card, CardHeader, CardFooter } from "@nextui-org/card";
-import { Image } from "@nextui-org/image";
-import {
-  MarqueeComponent,
-  About,
-  Stories,
-  Leetcode,
-  Footer,
-  ProjectCard,
-  Education,
-  Experience,
-  ContactModal,
-} from "@/components";
 import data from "@/app/ProjectData.json";
+import { About } from "@/components/About";
+import { ContactModal } from "@/components/Contact";
+import { Education } from "@/components/Education";
+import { Experience } from "@/components/Experience";
+import { Footer } from "@/components/Footer";
+import { Leetcode } from "@/components/Leetcode";
+import { MarqueeComponent } from "@/components/Marquee";
+import { ProjectCard } from "@/components/ProjectCard";
+import { Stories } from "@/components/Stories";
 import {
-  LeftArrowIcon,
-  RightArrowIcon,
-  SkillIcon,
-  LinkIcon2,
-  ResumeIcon,
-  MailIcon,
   EducationIcon,
-  MouseIcon,
-  MouseRightIcon,
-  MouseLeftIcon,
   HandIcon,
+  LinkIcon2,
+  MailIcon,
+  MouseIcon,
+  MouseLeftIcon,
+  MouseRightIcon,
+  ResumeIcon,
+  SkillIcon
 } from "@/components/icons";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { FollowerPointerCard } from "@/components/ui/following-pointer";
 import { Button } from "@nextui-org/button";
+import { Card, CardFooter, CardHeader } from "@nextui-org/card";
+import { Image } from "@nextui-org/image";
 import { Modal, ModalContent, useDisclosure } from "@nextui-org/modal";
+import { title } from "process";
+import { useEffect, useState } from "react";
 
-interface ProjectData {
-  Project1: Object;
-  Project2: Object;
-}
+
 
 export default function Home() {
   //Modal
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [projectDetails, setProjectDetails] = useState<ProjectData | null>(
+  const [projectDetails, setProjectDetails] = useState<any>(
     null
   );
 
@@ -49,87 +44,70 @@ export default function Home() {
     setProjectDetails(data);
   }, []);
 
-  if (!projectDetails) {
-    return null; // or a loading state
-  }
-
-  //Slider
-  const goToPrevSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide > 0 ? prevSlide - 1 : Object.keys(projectDetails).length - 1
-    );
-  };
-
-  const goToNextSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide < Object.keys(projectDetails).length - 1 ? prevSlide + 1 : 0
-    );
-  };
-
-  const renderCurrentProjectCard = () => {
-    const projectKeys = Object.keys(projectDetails);
-    const currentProjectKey = projectKeys[currentSlide];
-    const currentProjectData =
-      projectDetails[currentProjectKey as keyof ProjectData];
-
-    return <ProjectCard data={currentProjectData} />;
-  };
 
   return (
     <div className="max-w-screen p-8 pb-0 sm:p-14 sm:pb-0">
       <div className="grid grid-cols-12 gap-5 sm:gap-10">
         {/* Image Card */}
         <div className="col-span-12 md:col-span-6 lg:col-span-3" id="here">
-          <Card className="rounded-3xl h-[300px] md:h-[350px] lg:h-full">
-            <Image
-              removeWrapper
-              alt="Card background"
-              className="w-full h-full object-cover hidden lg:flex"
-              src="/Photo2.png"
-            />
-            <Image
-              removeWrapper
-              alt="Card background"
-              className="w-full h-full object-cover flex lg:hidden"
-              src="/Photo4.png"
-            />
-            <CardFooter className="p-0 backdrop-filter backdrop-blur-lg bg-opacity-30 before:bg-white/10 border-white/20 border-1 py-2 absolute rounded-full bottom-2 w-11/12 place-self-center shadow-small z-10">
-              <div className="w-full flex flex-row justify-evenly items-center">
-                <Button
-                  color="primary"
-                  radius="full"
-                  startContent={<MailIcon />}
-                  onPress={onOpen}
-                >
-                  Contact
-                </Button>
-                <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-                  <ModalContent>
-                    {(onClose) => (
-                      <>
-                        <ContactModal />
-                      </>
-                    )}
-                  </ModalContent>
-                </Modal>
-                <a
-                  href="https://drive.google.com/file/d/1omEgF8azJFpf8YmfVwD23B8LdpzqKPzA/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="text-xs inline-flex gap-2 items-center font-bold uppercase">
-                    <Button
-                      color="primary"
-                      radius="full"
-                      startContent={<ResumeIcon />}
-                    >
-                      Resume
-                    </Button>
-                  </div>
-                </a>
+          <FollowerPointerCard
+            title={
+              <div className="bg-white w-fit h-fit text-black p-2 rounded-3xl absolute m-0">
+                Hardik Sharma
               </div>
-            </CardFooter>
-          </Card>
+            }
+          >
+            <Card className="rounded-3xl h-[300px] md:h-[350px] lg:h-full">
+              <Image
+                removeWrapper
+                alt="Card background"
+                className="w-full h-full object-cover hidden lg:flex"
+                src="/Photo.jpg"
+              />
+              <Image
+                removeWrapper
+                alt="Card background"
+                className="w-full h-full object-cover flex lg:hidden"
+                src="/Photo.jpg"
+              />
+              <CardFooter className="p-0 backdrop-filter backdrop-blur-lg bg-opacity-30 before:bg-white/10 border-white/20 border-1 py-2 absolute rounded-full bottom-2 w-11/12 place-self-center shadow-small z-10">
+                <div className="w-full flex flex-row justify-evenly items-center">
+                  <Button
+                    color="primary"
+                    radius="full"
+                    startContent={<MailIcon />}
+                    onPress={onOpen}
+                  >
+                    Contact
+                  </Button>
+                  <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+                    <ModalContent>
+                      {(onClose) => (
+                        <>
+                          <ContactModal />
+                        </>
+                      )}
+                    </ModalContent>
+                  </Modal>
+                  <a
+                    href="https://drive.google.com/file/d/1omEgF8azJFpf8YmfVwD23B8LdpzqKPzA/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="text-xs inline-flex gap-2 items-center font-bold uppercase">
+                      <Button
+                        color="primary"
+                        radius="full"
+                        startContent={<ResumeIcon />}
+                      >
+                        Resume
+                      </Button>
+                    </div>
+                  </a>
+                </div>
+              </CardFooter>
+            </Card>
+          </FollowerPointerCard>
         </div>
 
         {/* About Card */}
@@ -159,28 +137,18 @@ export default function Home() {
         </div>
 
         {/* Project Card */}
-        <div className="col-span-12 lg:col-span-7">
-          <Card className="rounded-3xl w-full justify-center ">
-            <div className={`transition-opacity duration-500`}>
-              {renderCurrentProjectCard()}
-            </div>
-
-            <div className="flex flex-row items-center justify-center gap-3">
-              <button
-                className="button hover:scale-125 duration-200"
-                onClick={goToPrevSlide}
-              >
-                <LeftArrowIcon />
-              </button>
-              <button
-                className="button hover:scale-125 duration-200"
-                onClick={goToNextSlide}
-              >
-                <RightArrowIcon />
-              </button>
-            </div>
-            <br />
-          </Card>
+        <div className="col-span-12 h-[500px] md:h-[400px] lg:col-span-7">
+          <Carousel>
+            <CarouselContent>
+              {projectDetails?.map((data: any, index: any) => (
+                <CarouselItem key={index}>
+                  <ProjectCard data={data} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
 
         {/* Experience Card */}
@@ -254,6 +222,6 @@ export default function Home() {
           </Card>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

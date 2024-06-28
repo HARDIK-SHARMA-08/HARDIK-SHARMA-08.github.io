@@ -223,6 +223,20 @@ export const MarqueeComponent = () => {
                 removeWrapper
                 alt="Card background"
                 className="h-16 lg:h-20 object-scale-down"
+                src="https://cdn.simpleicons.org/postgresql/"
+              />
+            </div>
+            <div className="text-md pt-2 text-gray-500">PostgresSQL</div>
+          </div>
+        </div>
+
+        <div className="h-full w-full px-4">
+          <div className="flex flex-col items-center justify-center">
+            <div>
+              <Image
+                removeWrapper
+                alt="Card background"
+                className="h-16 lg:h-20 object-scale-down"
                 src="https://cdn.simpleicons.org/mysql/"
               />
             </div>
